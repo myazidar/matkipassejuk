@@ -101,6 +101,84 @@
         </div>
     </section>
 
+<section class="py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto text-center mb-16">
+        <h2 class="text-3xl font-bold">Kelebihan Mat Kipas Sejuk</h2>
+        <p class="text-slate-500 mt-2">Servis professional untuk keselesaan tetamu anda.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl">
+                <i class="fa-solid fa-wind"></i>
+            </div>
+            <h4 class="font-bold text-xl mb-3">Industrial Grade</h4>
+            <p class="text-slate-600">Unit berkuasa tinggi (High CFM) yang direka khas untuk kawasan terbuka dan dewan besar.</p>
+        </div>
+        <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+            <h4 class="font-bold text-xl mb-3">On-Time Delivery</h4>
+            <p class="text-slate-600">Kami faham kepentingan masa majlis anda. Penghantaran dan pemasangan tepat pada waktu.</p>
+        </div>
+        <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl">
+                <i class="fa-solid fa-sparkles"></i>
+            </div>
+            <h4 class="font-bold text-xl mb-3">Unit Bersih & Wangi</h4>
+            <p class="text-slate-600">Setiap unit disanitasi dan dibersihkan sebelum dihantar. Percuma pek ais untuk kesegaran maksimum.</p>
+        </div>
+    </div>
+</section>
+
+    <section class="py-20 px-4 bg-slate-50">
+    <div class="max-w-6xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold">Galeri Majlis & Event</h2>
+        <p class="text-slate-500 mt-2">Bukti servis kami di sekitar Johor Bahru.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+        <div class="aspect-square bg-slate-200 rounded-2xl overflow-hidden group">
+            <img src="path-to-your-photo1.jpg" alt="Wedding JB" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+        </div>
+        <div class="aspect-square bg-slate-200 rounded-2xl overflow-hidden group">
+            <img src="path-to-your-photo2.jpg" alt="Workshop Event" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+        </div>
+        <div class="aspect-square bg-slate-200 rounded-2xl overflow-hidden group">
+            <img src="path-to-your-photo3.jpg" alt="Kenduri Kempas" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+        </div>
+        <div class="aspect-square bg-slate-200 rounded-2xl overflow-hidden group">
+            <img src="path-to-your-photo4.jpg" alt="Mount Austin Expo" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+        </div>
+    </div>
+</section>
+
+    <section class="py-20 px-4 bg-white">
+    <div class="max-w-xl mx-auto bg-blue-600 rounded-3xl p-8 md:p-12 text-center text-white shadow-2xl">
+        <h3 class="text-2xl font-bold mb-4">Semak Kekosongan Tarikh</h3>
+        <p class="mb-8 opacity-90">Masukkan tarikh majlis anda untuk semakan pantas.</p>
+        <div class="flex flex-col gap-4">
+            <input type="date" id="eventDate" class="w-full p-4 rounded-xl text-slate-900 font-semibold focus:outline-none">
+            <button onclick="checkDate()" class="bg-slate-900 text-white p-4 rounded-xl font-bold hover:bg-slate-800 transition">Check via WhatsApp</button>
+        </div>
+    </div>
+</section>
+
+<script>
+function checkDate() {
+    const dateInput = document.getElementById('eventDate').value;
+    const message = dateInput ? 
+        `Hi Mat Kipas Sejuk, saya nak semak kekosongan untuk tarikh ${dateInput}` : 
+        "Hi Mat Kipas Sejuk, saya nak semak kekosongan tarikh majlis saya.";
+    
+    // Track event
+    trackWhatsApp('Calendar Check');
+    
+    window.location.href = `https://wa.me/601175695852?text=${encodeURIComponent(message)}`;
+}
+</script>
+    
     <section class="py-20 px-4 bg-slate-50">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-12">Soalan Lazim (FAQ)</h2>
@@ -140,3 +218,4 @@
 
 </body>
 </html>
+
