@@ -2,17 +2,16 @@ Options -MultiViews
 
 RewriteEngine On
 
-# REMOVE .html from URL
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^ %1 [R=301,L]
+# OLD .html URL redirects to current folder URLs
+Redirect 301 /sewa-aircooler-kulai.html /sewa-aircooler-kulai/
+Redirect 301 /sewa-aircooler-skudai.html /sewa-aircooler-skudai/
+Redirect 301 /sewa-aircooler-johor-bahru.html /sewa-aircooler-johor-bahru/
+Redirect 301 /sewa-aircooler-iskandar-puteri.html /sewa-aircooler-iskandar-puteri/
 
-# INTERNAL ROUTING FOR FOLDER STYLE
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z0-9-]+)/?$ $1/index.html [L]
+# Force trailing slash for folder-style URLs
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.+)$ /$1/ [R=301,L]
 
-# OLD URL REDIRECTS
-Redirect 301 /sewa-aircooler-kulai.html https://matkipassejuk.my/kulai/
-Redirect 301 /sewa-aircooler-skudai.html https://matkipassejuk.my/skudai/
-Redirect 301 /sewa-aircooler-johor-bahru.html https://matkipassejuk.my/johor-bahru/
-Redirect 301 /sewa-aircooler-iskandar-puteri.html https://matkipassejuk.my/iskandar-puteri/
+# Serve index.html inside folder
+DirectoryIndex index.html
