@@ -106,6 +106,29 @@
             background-size: 40px 40px;
         }
 
+        <style>
+    .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hover-lift {
+        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-6px);
+        border-color: rgba(147, 197, 253, 0.45);
+        background: rgba(255,255,255,0.05);
+    }
+</style>
+
     </style>
 </head>
 
@@ -223,13 +246,13 @@
 
 </section>
 
-<section class="py-24 px-6 border-t section-divider">
+<section class="py-24 px-6 border-t section-divider reveal">
 
     <div class="max-w-7xl mx-auto">
 
         <div class="grid md:grid-cols-4 gap-8">
 
-            <div class="premium-card rounded-[2rem] p-8">
+            <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="w-14 h-14 rounded-2xl bg-blue-400/10 flex items-center justify-center mb-6">
 
@@ -247,7 +270,7 @@
 
             </div>
 
-            <div class="premium-card rounded-[2rem] p-8">
+            <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="w-14 h-14 rounded-2xl bg-blue-400/10 flex items-center justify-center mb-6">
 
@@ -265,7 +288,7 @@
 
             </div>
 
-            <div class="premium-card rounded-[2rem] p-8">
+            <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="w-14 h-14 rounded-2xl bg-blue-400/10 flex items-center justify-center mb-6">
 
@@ -283,7 +306,7 @@
 
             </div>
 
-            <div class="premium-card rounded-[2rem] p-8">
+            <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="w-14 h-14 rounded-2xl bg-blue-400/10 flex items-center justify-center mb-6">
 
@@ -386,8 +409,8 @@
     </div>
 
 </section>
-
-<section id="pakej" class="py-32 px-6 border-t section-divider">
+    
+<section class="py-24 px-6 border-t section-divider reveal">
 
     <div class="max-w-7xl mx-auto">
 
@@ -405,7 +428,7 @@
 
         <div class="grid lg:grid-cols-3 gap-8">
 
-            <div class="premium-card rounded-[2rem] p-10">
+            <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="text-sm uppercase tracking-[0.25em] text-slate-400 mb-6">
                     Single Unit
@@ -471,7 +494,7 @@
 
             </div>
 
-            <div class="premium-card rounded-[2rem] p-10">
+            <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="text-sm uppercase tracking-[0.25em] text-slate-400 mb-6">
                     Combo 4 Unit
@@ -508,7 +531,7 @@
 
 </section>
 
-<section class="py-32 px-6 border-t section-divider">
+<section class="py-24 px-6 border-t section-divider reveal">
 
     <div class="max-w-7xl mx-auto">
 
@@ -606,8 +629,8 @@
     </div>
 
 </section>
-
-<section class="py-32 px-6 border-t section-divider">
+    
+<section class="py-24 px-6 border-t section-divider reveal">
 
     <div class="max-w-7xl mx-auto">
 
@@ -637,7 +660,7 @@
         <div class="grid lg:grid-cols-3 gap-8">
 
             <!-- REVIEW 1 -->
-            <div class="premium-card rounded-[2rem] p-8">
+            <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="flex items-center gap-1 text-yellow-400 mb-6">
 
@@ -672,7 +695,7 @@
             </div>
 
             <!-- REVIEW 2 -->
-            <div class="premium-card rounded-[2rem] p-8">
+            <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="flex items-center gap-1 text-yellow-400 mb-6">
 
@@ -707,7 +730,7 @@
             </div>
 
             <!-- REVIEW 3 -->
-            <div class="premium-card rounded-[2rem] p-8">
+            <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="flex items-center gap-1 text-yellow-400 mb-6">
 
@@ -761,7 +784,7 @@
 
 </section>
 
-<section class="py-32 px-6 border-t section-divider">
+<section class="py-24 px-6 border-t section-divider reveal">
 
     <div class="max-w-4xl mx-auto text-center">
 
