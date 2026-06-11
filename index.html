@@ -950,44 +950,83 @@
         </div>
 
         <h2 class="text-4xl md:text-6xl font-black leading-tight mb-8">
-
             Let’s Cool
             Your Event.
-
         </h2>
 
         <p class="text-slate-300 text-lg mb-12 max-w-2xl mx-auto">
-
-            Semak kekosongan tarikh dan pakej
-            untuk majlis anda sekarang.
-
+            Isi maklumat ringkas dan terus WhatsApp kami untuk semak kekosongan tarikh.
         </p>
 
         <div class="max-w-xl mx-auto premium-card rounded-[2rem] p-8">
 
-            <div class="mb-6">
+            <div class="grid gap-5">
 
-                <label class="block text-left text-sm uppercase tracking-[0.2em] text-slate-400 mb-3">
+                <div>
+                    <label class="block text-left text-sm uppercase tracking-[0.2em] text-slate-400 mb-3">
+                        Tarikh Event
+                    </label>
 
-                    Pilih Tarikh Event
+                    <input
+                        type="date"
+                        id="eventDate"
+                        class="w-full bg-transparent border border-white/10 rounded-2xl px-5 py-4 text-white text-lg outline-none focus:border-blue-400 transition"
+                    />
+                </div>
 
-                </label>
+                <div>
+                    <label class="block text-left text-sm uppercase tracking-[0.2em] text-slate-400 mb-3">
+                        Lokasi Event
+                    </label>
 
-                <input
-                    type="date"
-                    id="eventDate"
-                    class="w-full bg-transparent border border-white/10 rounded-2xl px-5 py-4 text-white text-lg outline-none focus:border-blue-400 transition"
-                />
+                    <input
+                        type="text"
+                        id="eventLocation"
+                        placeholder="Contoh: Bandar Dato Onn, Johor Bahru"
+                        class="w-full bg-transparent border border-white/10 rounded-2xl px-5 py-4 text-white text-lg outline-none focus:border-blue-400 transition placeholder:text-slate-500"
+                    />
+                </div>
+
+                <div>
+                    <label class="block text-left text-sm uppercase tracking-[0.2em] text-slate-400 mb-3">
+                        Jenis Event
+                    </label>
+
+                    <select
+                        id="eventType"
+                        class="w-full bg-slate-950 border border-white/10 rounded-2xl px-5 py-4 text-white text-lg outline-none focus:border-blue-400 transition"
+                    >
+                        <option value="">Pilih jenis event</option>
+                        <option value="Kenduri Kahwin">Kenduri Kahwin</option>
+                        <option value="Majlis Pertunangan">Majlis Pertunangan</option>
+                        <option value="Korporat / Company Event">Korporat / Company Event</option>
+                        <option value="Surau / Masjid">Surau / Masjid</option>
+                        <option value="Restoran / Premis Niaga">Restoran / Premis Niaga</option>
+                        <option value="Lain-lain">Lain-lain</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-left text-sm uppercase tracking-[0.2em] text-slate-400 mb-3">
+                        Anggaran Bilangan Unit
+                    </label>
+
+                    <input
+                        type="number"
+                        id="eventUnit"
+                        min="1"
+                        placeholder="Contoh: 2"
+                        class="w-full bg-transparent border border-white/10 rounded-2xl px-5 py-4 text-white text-lg outline-none focus:border-blue-400 transition placeholder:text-slate-500"
+                    />
+                </div>
 
             </div>
 
             <button
-                onclick="checkDate()"
-                class="w-full btn-primary rounded-full py-5 font-black text-lg transition hover:scale-[1.02]"
+                onclick="sendWebsiteLead()"
+                class="w-full mt-6 btn-primary rounded-full py-5 font-black text-lg transition hover:scale-[1.02]"
             >
-
-                Semak Tarikh di WhatsApp
-
+                Dapatkan Sebut Harga di WhatsApp
             </button>
 
         </div>
@@ -996,36 +1035,7 @@
 
 </section>
 
-<script>
 
-function checkDate() {
-
-    const dateInput = document.getElementById('eventDate').value;
-
-    let message = "";
-
-    if(dateInput) {
-
-        message =
-        `Hi Mat Kipas Sejuk, saya nak semak kekosongan aircooler untuk tarikh ${dateInput}.`;
-
-    } else {
-
-        message =
-        "Hi Mat Kipas Sejuk, saya nak semak kekosongan aircooler untuk majlis saya.";
-
-    }
-
-    trackWhatsApp('Date Checker');
-
-    window.open(
-        `https://wa.me/60187674359?text=${encodeURIComponent(message)}`,
-        '_blank'
-    );
-
-}
-
-</script>
 
 <footer class="py-16 px-6 border-t section-divider">
 
@@ -1126,6 +1136,41 @@ revealElements.forEach((element) => {
 });
 
 </script>
-    
+    <script>
+function sendWebsiteLead() {
+    const date = document.getElementById('eventDate').value;
+    const location = document.getElementById('eventLocation').value;
+    const type = document.getElementById('eventType').value;
+    const unit = document.getElementById('eventUnit').value;
+
+    if (!date || !location || !type) {
+        alert('Sila isi Tarikh Event, Lokasi Event dan Jenis Event dulu.');
+        return;
+    }
+
+    const message =
+`Assalamualaikum Mat Kipas Sejuk.
+
+Saya ingin mendapatkan sebut harga sewaan Aircooler Gergasi.
+
+📅 Tarikh Event: ${date}
+📍 Lokasi: ${location}
+🎪 Jenis Event: ${type}
+🌬️ Anggaran Unit: ${unit || '-'}
+
+Lead Source: Website
+
+Mohon semak kekosongan dan cadangan pakej.
+
+Terima kasih.`;
+
+    const phone = '601123817183';
+
+    window.open(
+        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+        '_blank'
+    );
+}
+</script>
 </body>
 </html>
