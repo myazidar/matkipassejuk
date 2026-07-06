@@ -47,7 +47,6 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
     <style>
-
         html {
             scroll-behavior: smooth;
         }
@@ -106,30 +105,56 @@
             background-size: 40px 40px;
         }
 
-        <style>
-    .reveal {
-        opacity: 0;
-        transform: translateY(28px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
 
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    .hover-lift {
-        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-    }
+        .hover-lift {
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
 
-    .hover-lift:hover {
-        transform: translateY(-6px);
-        border-color: rgba(147, 197, 253, 0.45);
-        background: rgba(255,255,255,0.05);
-    }
-</style>
-
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            border-color: rgba(147, 197, 253, 0.45);
+            background: rgba(255,255,255,0.05);
+        }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HVACBusiness",
+      "name": "Mat Kipas Sejuk",
+      "image": "https://www.matkipassejuk.my/assets/mat_kipas_sejuk_hero.jpg",
+      "@id": "https://www.matkipassejuk.my/",
+      "url": "https://www.matkipassejuk.my/",
+      "telephone": "+60187674359",
+      "description": "Premium aircooler rental in Johor Bahru for weddings, corporate events, and outdoor functions.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Johor Bahru",
+        "addressRegion": "Johor",
+        "addressCountry": "MY"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Johor Bahru"},
+        {"@type": "City", "name": "Iskandar Puteri"},
+        {"@type": "City", "name": "Skudai"},
+        {"@type": "City", "name": "Kulai"},
+        {"@type": "City", "name": "Pasir Gudang"},
+        {"@type": "City", "name": "Senai"}
+      ],
+      "priceRange": "$$"
+    }
+    </script>
+
 </head>
 
 <body class="overflow-x-hidden">
@@ -461,10 +486,8 @@
 
 <div class="premium-card rounded-[2rem] p-10 border border-blue-400 relative overflow-hidden hover-lift reveal bg-gradient-to-br from-blue-950/70 to-slate-900">
 
-    <!-- GLOW -->
     <div class="absolute -top-24 right-[-40px] w-56 h-56 bg-blue-400/20 blur-3xl rounded-full"></div>
 
-    <!-- MOST POPULAR -->
     <div class="absolute top-6 right-6 text-xs uppercase tracking-[0.25em] text-blue-300 font-semibold">
 
         Most Popular
@@ -625,14 +648,14 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-            <div class="premium-card py-5 rounded-2xl hover-lift reveal">Skudai</div>
-            <div class="premium-card py-5 rounded-2xl hover-lift reveal">Kempas</div>
-            <div class="premium-card py-5 rounded-2xl hover-lift reveal">Kulai</div>
-            <div class="premium-card py-5 rounded-2xl hover-lift reveal">Pasir Gudang</div>
-            <div class="premium-card py-5 rounded-2xl hover-lift reveal">Senai</div>
-            <div class="premium-card py-5 rounded-2xl hover-lift reveal">Mount Austin</div>
-            <div class="premium-card py-5 rounded-2xl hover-lift reveal">Iskandar Puteri</div>
-            <div class="premium-card py-5 rounded-2xl hover-lift reveal">Kangkar Pulai</div>
+            <a href="sewa-aircooler-skudai/" class="premium-card py-5 rounded-2xl hover-lift reveal block text-center transition">Skudai</a>
+            <a href="sewa-aircooler-kempas/" class="premium-card py-5 rounded-2xl hover-lift reveal block text-center transition">Kempas</a>
+            <a href="sewa-aircooler-kulai/" class="premium-card py-5 rounded-2xl hover-lift reveal block text-center transition">Kulai</a>
+            <a href="sewa-aircooler-pasir-gudang/" class="premium-card py-5 rounded-2xl hover-lift reveal block text-center transition">Pasir Gudang</a>
+            <a href="sewa-aircooler-senai/" class="premium-card py-5 rounded-2xl hover-lift reveal block text-center transition">Senai</a>
+            <a href="sewa-aircooler-mount-austin/" class="premium-card py-5 rounded-2xl hover-lift reveal block text-center transition">Mount Austin</a>
+            <a href="sewa-aircooler-iskandar-puteri/" class="premium-card py-5 rounded-2xl hover-lift reveal block text-center transition">Iskandar Puteri</a>
+            <a href="sewa-aircooler-johor-bahru/" class="premium-card py-5 rounded-2xl hover-lift reveal block text-center transition">Johor Bahru</a>
 
         </div>
 
@@ -669,7 +692,6 @@
 
         <div class="grid lg:grid-cols-3 gap-8">
 
-            <!-- REVIEW 1 -->
             <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="flex items-center gap-1 text-yellow-400 mb-6">
@@ -704,7 +726,6 @@
 
             </div>
 
-            <!-- REVIEW 2 -->
             <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="flex items-center gap-1 text-yellow-400 mb-6">
@@ -739,7 +760,6 @@
 
             </div>
 
-            <!-- REVIEW 3 -->
             <div class="premium-card rounded-[2rem] p-8 hover-lift reveal">
 
                 <div class="flex items-center gap-1 text-yellow-400 mb-6">
@@ -822,7 +842,6 @@
 
         <div class="space-y-5">
 
-            <!-- FAQ 1 -->
             <details class="premium-card rounded-[2rem] p-8 hover-lift reveal group">
 
                 <summary class="cursor-pointer list-none flex items-center justify-between">
@@ -844,7 +863,6 @@
 
             </details>
 
-            <!-- FAQ 2 -->
             <details class="premium-card rounded-[2rem] p-8 hover-lift reveal group">
 
                 <summary class="cursor-pointer list-none flex items-center justify-between">
@@ -866,7 +884,6 @@
 
             </details>
 
-            <!-- FAQ 3 -->
             <details class="premium-card rounded-[2rem] p-8 hover-lift reveal group">
 
                 <summary class="cursor-pointer list-none flex items-center justify-between">
@@ -890,7 +907,6 @@
 
             </details>
 
-            <!-- FAQ 4 -->
             <details class="premium-card rounded-[2rem] p-8 hover-lift reveal group">
 
                 <summary class="cursor-pointer list-none flex items-center justify-between">
@@ -912,7 +928,6 @@
 
             </details>
 
-            <!-- FAQ 5 -->
             <details class="premium-card rounded-[2rem] p-8 hover-lift reveal group">
 
                 <summary class="cursor-pointer list-none flex items-center justify-between">
