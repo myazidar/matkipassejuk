@@ -1115,17 +1115,17 @@ revealElements.forEach((element) => {
 </script>
 <script>
 function sendWebsiteLead() {
-    const date = document.getElementById('eventDate').value;
-    const location = document.getElementById('eventLocation').value;
-    const type = document.getElementById('eventType').value;
-    const unit = document.getElementById('eventUnit').value;
+const date = document.getElementById('eventDate').value;
+const location = document.getElementById('eventLocation').value;
+const type = document.getElementById('eventType').value;
+const unit = document.getElementById('eventUnit').value;
 
-    if (!date || !location || !type) {
-        alert('Sila lengkapkan Tarikh, Lokasi, dan Kategori Majlis terlebih dahulu.');
-        return;
-    }
+if (!date || !location || !type) {
+alert('Sila lengkapkan Tarikh, Lokasi, dan Kategori Majlis terlebih dahulu.');
+return;
+}
 
-    const message =
+const message =
 `Salam Mat Kipas Sejuk. Saya berminat untuk dapatkan sebut harga sewaan Aircooler Gergasi.
 
 📅 Tarikh Majlis: ${date}
@@ -1135,13 +1135,12 @@ function sendWebsiteLead() {
 
 (Mohon admin semak jadual kekosongan untuk tarikh ini). Terima kasih!`;
 
-    const phone = '601123817183';
+// NOMBOR TELEFON TELAH DIBETULKAN DI SINI
+const phone = '60187674359';
 
-    window.open(
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
-        '_blank'
-    );
+window.open(
+`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+'_blank'
+);
 }
 </script>
-</body>
-</html>
