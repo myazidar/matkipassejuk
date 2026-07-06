@@ -1,17 +1,22 @@
-Options -MultiViews
+# Halang Apache dari teka fail dan halang orang selongkar folder assets
+Options -MultiViews -Indexes
 
 RewriteEngine On
 
-# OLD .html URL redirects to current folder URLs
+# 1. PAKSA PENGGUNAAN HTTPS (Sangat penting untuk Google SEO & Security)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. OLD .html URL redirects to current folder URLs (Kekalkan, ini sangat bagus!)
 Redirect 301 /sewa-aircooler-kulai.html /sewa-aircooler-kulai/
 Redirect 301 /sewa-aircooler-skudai.html /sewa-aircooler-skudai/
 Redirect 301 /sewa-aircooler-johor-bahru.html /sewa-aircooler-johor-bahru/
 Redirect 301 /sewa-aircooler-iskandar-puteri.html /sewa-aircooler-iskandar-puteri/
 
-# Force trailing slash for folder-style URLs
+# 3. Force trailing slash for folder-style URLs (Kekalkan, untuk elak path gambar rosak)
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^(.+)$ /$1/ [R=301,L]
 
-# Serve index.html inside folder
+# 4. Serve index.html inside folder
 DirectoryIndex index.html
