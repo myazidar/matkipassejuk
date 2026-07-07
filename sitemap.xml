@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Page -->
+  <url>
+    <loc>https://www.matkipassejuk.my/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Galeri -->
+  <url>
+    <loc>https://www.matkipassejuk.my/galeri</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Cawangan JB -->
+  <url>
+    <loc>https://www.matkipassejuk.my/sewa-aircooler-johor-bahru/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Cawangan Skudai -->
+  <url>
+    <loc>https://www.matkipassejuk.my/sewa-aircooler-skudai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Cawangan Kulai -->
+  <url>
+    <loc>https://www.matkipassejuk.my/sewa-aircooler-kulai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Cawangan Iskandar Puteri -->
+  <url>
+    <loc>https://www.matkipassejuk.my/sewa-aircooler-iskandar-puteri/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Cawangan Pasir Gudang -->
+  <url>
+    <loc>https://www.matkipassejuk.my/sewa-aircooler-pasir-gudang/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Cawangan Senai -->
+  <url>
+    <loc>https://www.matkipassejuk.my/sewa-aircooler-senai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
