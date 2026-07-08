@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Job - Mat Kipas Sejuk</title>
+    <style>
+        /* Gaya asas website */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            margin-top: 10px;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+        }
+
+        /* Susunan Grid untuk Gambar */
+        .gallery-grid {
+            display: grid;
+            /* Auto adjust ikut saiz screen, minimum 250px lebar */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Pastikan gambar tak penyek */
+            display: block;
+        }
+
+        /* Nama lokasi kat bawah gambar */
+        .caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #555;
+            text-transform: capitalize;
+        }
+
+        .no-data {
+            text-align: center;
+            font-size: 1.2em;
+            color: #777;
+            grid-column: 1 / -1;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>📸 Galeri Mat Kipas Sejuk</h1>
+        <p>Koleksi hasil kerja dan pemasangan air cooler & kipas industri kami di sekitar Johor.</p>
+    </div>
+
+    <div class="container">
+        <div class="gallery-grid">
+            <?php
+            // Folder tempat gambar disimpan
+            $folder = 'galeri-job/';
+            
+            // Check kalau folder tu wujud
+            if (is_dir($folder)) {
+                // Tarik semua fail gambar (jpg, jpeg, png)
+                $gambar = glob($folder . "*.{jpg,jpeg,png}", GLOB_BRACE);
+                
+                if (count($gambar) > 0) {
+                    // Susun gambar ikut tarikh paling baru (newest first)
+                    usort($gambar, function($a, $b) {
+                        return filemtime($b) - filemtime($a);
+                    });
+
+                    // Loop dan keluarkan setiap gambar
+                    foreach ($gambar as $imej) {
+                        // Ambil nama fail tanpa folder untuk dijadikan caption
+                        $nama_fail = basename($imej);
+                        
+                        // Bersihkan nama untuk nampak cantik kat caption (buang extension dan nombor hujung)
+                        // Contoh: majlis-tunang-masai-20260708-001.jpg jadi "Majlis Tunang Masai"
+                        $caption_raw = preg_replace('/-\d{8}-\d{3}\.jpg$/i', '', $nama_fail);
+                        $caption_bersih = str_replace('-', ' ', $caption_raw);
+
+                        echo '<div class="gallery-item">';
+                        // Guna lazy loading supaya page laju
+                        echo '<img src="' . $imej . '" alt="' . htmlspecialchars($caption_bersih) . '" loading="lazy">';
+                        echo '<div class="caption">' . htmlspecialchars($caption_bersih) . '</div>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo '<div class="no-data">Belum ada gambar job di-upload lagi.</div>';
+                }
+            } else {
+                echo '<div class="no-data">Sistem sedang dikemaskini.</div>';
+            }
+            ?>
+        </div>
+    </div>
+
+</body>
+</html>
